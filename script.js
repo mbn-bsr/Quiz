@@ -41,7 +41,7 @@ function welcomeAnd1by1Qs(elementMaker, strtBtn) {
   strt.addEventListener("click", () => {
     qNav(welcm, strt);
   });
-  //return { welcm, strt };
+  
 }
 
 let currentIndex = 0;
@@ -52,18 +52,10 @@ function qNav(w, s) {
   let Qs = document.getElementsByClassName("question");
   let Ops = document.getElementsByClassName("options");
 
-  // prevBtn.addEventListener("click", function prevQ() {
-  //   return insidePrevQ(Qs, Ops);
-  // });
+ 
   insideNextQ(Qs, Ops);
   nextBtn.style.display = "block";
 
-  //else {
-  // let over = newElement("div", wrapper, "Over");
-  // over.innerHTML = "Finishhhhhhh";
-  // return over;
-  //   nextBtn.disabled = true;
-  // }
 }
 
 
@@ -83,9 +75,9 @@ function insideNextQ(Qs, Ops) {
     currentIndex += 1;
     console.log(currentIndex);
     nextBtn.addEventListener("click", function nextQ() {
+      nextBtn.removeEventListener('click', nextQ);
       return insideNextQ(Qs, Ops);
     });
-    //nextBtn.removeEventListener('click', nextQ);
   
 }
 
@@ -106,32 +98,7 @@ function insidePrevQ(Qs, Ops) {
   console.log(currentIndex);
 }
 
-/*
-function nextQ(w, s) {
-  if (currentIndex <= 9) {
-    w.style.display = "none";
-    s.style.display = "none";
-    let Qs = document.getElementsByClassName("question");
-    let Ops = document.getElementsByClassName("options");
-    if (currentIndex > 0) {
-      Qs[currentIndex - 1].style.display = "none";
-      Ops[currentIndex - 1].style.display = "none";
-    }
-    Qs[currentIndex].style.display = "block";
-    Qs[
-      currentIndex
-    ].textContent = `Question # ${currentIndex+1}: ${Qs[currentIndex].textContent}`;
-    Ops[currentIndex].style.display = "block";
-    nextBtn.style.display = "block";
-    currentIndex += 1;
-    console.log(currentIndex);    
-  } else {
-    // let over = newElement("div", wrapper, "Over");
-    // over.innerHTML = "Finishhhhhhh";
-    // return over;
-    nextBtn.disabled = true;
-  }
-}*/
+
 
 function handleNextQ() {
   nextBtn.removeEventListener("click", handleNextQ);
