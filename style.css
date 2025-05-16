@@ -1,17 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-
-.wrapper{
-    /* counter-reset: numbers; */
-
-    font-family: "Quicksand", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-/* .question::before{
-    counter-increment: numbers;
-    content: "Question " counter(numbers)": "; 
-} */
+.wrapper {
+    /* counter-reset: numbers; */
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    font-family: "Quicksand", serif;
+    /* font-optical-sizing: auto; */
+    font-weight: 500;
+    font-style: normal;
+    /* background-color: pink; */
+}
 
+.bgImg {
+    position: absolute;
+    background: url('https://www.stx.ox.ac.uk/sites/default/files/stx/images/article/depositphotos_41197145-stock-photo-quiz.jpg')no-repeat fixed;
+    background-size: 100% 100%;
+    opacity: 0.1;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
