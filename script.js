@@ -23,8 +23,18 @@ function answerArrMixer(obj) {
   //newR.push(obj.correct_answer);
   let answerArr =  newR.sort(() => 0.5 - Math.random());
   //let checkBox = elementMaker()
+  let form = newElement('form', wrapper, 'form');
+  answerArr.forEach(
+    (index) => {
+      let radio = newElement('input', form, 'input');
+      radio.type = 'radio';
+      radio.name = 'options';
+      radio.id = '';
+    }
+  );
+  
   return answerArr;
-  //⏩⏩⏩PROBABLY CREATE A FUNCTION THAT INSERTS ANSWER ARRAY'S INDIVIDUAL ELEMENTS INTO SEPARATE RADIO BUTTONS/CHECKBOXES
+  
 }
 
 
@@ -113,6 +123,7 @@ data()
         question.innerHTML = `Question #${qNum}: ${indx.question}`;
         let options = elementMaker("div", wrapper, "options");
         options.innerHTML = ansArrMx(indx);
+        //⏩⏩⏩PROBABLY CREATE A FUNCTION THAT INSERTS ANSWER ARRAY'S INDIVIDUAL ELEMENTS INTO SEPARATE RADIO BUTTONS/CHECKBOXES
         question.style.display = "none";
         options.style.display = "none";
       }
